@@ -1,6 +1,6 @@
 <div align="center">
 
-![Dalet](https://github.com/TxtDot/.github/blob/main/imgs/dalet.png?raw=true)
+![Dalet](https://github.com/TempoWorks/.github/blob/main/imgs/dalet.png?raw=true)
 
 # Dalet
 
