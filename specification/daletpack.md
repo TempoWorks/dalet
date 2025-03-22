@@ -6,13 +6,13 @@ All apps that supports Dalet must use this format when transmitting data between
 
 All data must be compressed with [zstd](https://datatracker.ietf.org/doc/html/rfc8878).
 
-Page data format is array of tags (see [daletl specification](./daletl.md)), each element reads sequentially. Type definition for page is not needed.
+Page data format is array of tags (see [DaletPack specification](./DaletPack.md)), each element reads sequentially. Type definition for page is not needed.
 
 Mime type: `application/dalet-pack`
 
 ## Types
 
-Notation: 
+Notation:
 `(id, [body_type], [argument_type]) [hex_id]`
 
 - Tags with body
@@ -41,10 +41,10 @@ Notation:
 
 ### Special symbols
 
-| name                     | hex_id  |
-| ------------------------ | ------- |
-| text end                 | 00      |
-| tags end                 | 01      |
+| name     | hex_id |
+| -------- | ------ |
+| text end | 00     |
+| tags end | 01     |
 
 ### Format
 
@@ -57,7 +57,6 @@ Variable length of bytes - `+====+`
 Variable number of data objects - `+~~~~+`
 
 #### Overview
-
 
 ##### Tag data
 

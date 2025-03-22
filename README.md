@@ -19,9 +19,9 @@ Markup language ecosystem сombining small file size, big number of possibilitie
 
 ## Concept
 
-This is Daleth (high level language that compiles to Daletl).
+This is DaletMark (high level language that compiles to DaletPack).
 
-```daleth
+```DaletMark
 # multilines
 #
 # {text} - input is trimmed with indent
@@ -52,8 +52,8 @@ This is Daleth (high level language that compiles to Daletl).
 # [[tags]] - element tag with body of multiple tags
 # text - element tag with text body
 
-meta "title": Daleth syntax concept
-meta "description": This document describes Daleth syntax and some tags
+meta "title": DaletMark syntax concept
+meta "description": This document describes DaletMark syntax and some tags
 
 h1: TxtDot revolution
 p: TxtDot is a cool project

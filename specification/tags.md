@@ -11,9 +11,9 @@
 
 Most primitive tag. Also used if no tag is specified.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 el: I am Element
 el [
   h1: I am first level heading
@@ -23,22 +23,22 @@ el [
 
 ## 1. Heading
 
-| Property | Description         |
-| -------- | ------------------- |
-| name     | h                   |
-| id       | 1                   |
-| body     | text                |
-| argument | int x; 1 <= x <= 6  |
+| Property | Description        |
+| -------- | ------------------ |
+| name     | h                  |
+| id       | 1                  |
+| body     | text               |
+| argument | int x; 1 <= x <= 6 |
 
 Heading is used for text formatting.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 h1: Dalet
-h2: Daleth
+h2: DaletMark
 h3: High level
-h2: Daletl
+h2: DaletPack
 h3: Low level
 ```
 
@@ -53,9 +53,9 @@ h3: Low level
 
 Paragraph is used for text formatting.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 p: This is a paragraph
 {- Paragraph also used with this custom syntax }
 ```
@@ -71,9 +71,9 @@ p: This is a paragraph
 
 Line break is used to insert a line break into the text.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 br
 ```
 
@@ -88,9 +88,9 @@ br
 
 Unordered list is used to create a list.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 ul [
   - Item 1
   - Item 2
@@ -108,9 +108,9 @@ ul [
 
 Ordered list is used to create a list with increasing numbers.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 ol [
   - Item
   - Item
@@ -128,9 +128,9 @@ ol [
 | argument | optional; start, center, end |
 
 Splits the text into rows. The alignment argument specifies how the items inside the row are aligned horizontally. By default it is aligned to the start.
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 row [
   - Left
   - Right
@@ -153,9 +153,9 @@ row "start" [
 
 Link to other sites. On click the link opens in new tab.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 link "https://example.com": I am Link
 ```
 
@@ -170,9 +170,9 @@ link "https://example.com": I am Link
 
 Link to the same site. On click the link opens in current tab.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 navlink "/specification": I am Navlink
 ```
 
@@ -187,9 +187,9 @@ navlink "/specification": I am Navlink
 
 Same as link, but with button style.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 btn "https://example.com": I am Button
 ```
 
@@ -204,9 +204,9 @@ btn "https://example.com": I am Button
 
 Same as navlink, but with button style.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 navbtn "https://example.com": I am NavButton
 ```
 
@@ -221,9 +221,9 @@ navbtn "https://example.com": I am NavButton
 
 Displays an image.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 img "/dalet.png"
 ```
 
@@ -238,9 +238,9 @@ img "/dalet.png"
 
 Creates a table.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 {> table
   [ Name | Age ]
   [ Elon | 53  ]
@@ -269,9 +269,9 @@ table [
 
 Creates a table row.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 trow [
   - Name
   - Age
@@ -289,9 +289,9 @@ trow [
 
 Like table row, but with primary background.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 tprow [
   - Name
   - Age
@@ -309,9 +309,9 @@ tprow [
 
 Creates a horizontal rule.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 hr
 ```
 
@@ -326,9 +326,9 @@ hr
 
 Creates **bold** text.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 b: I am Bold
 ```
 
@@ -343,9 +343,9 @@ b: I am Bold
 
 Creates _italic_ text.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 i: I am Italic
 ```
 
@@ -360,60 +360,60 @@ i: I am Italic
 
 Creates a blockquote.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 bq: I am Blockquote
 ```
 
 ## 19. Footnote Link
 
-| Property | Description    |
-| -------- | -------------- |
-| name     | footlnk        |
-| id       | 19             |
-| body     | no             |
-| argument | text, number   |
+| Property | Description  |
+| -------- | ------------ |
+| name     | footlnk      |
+| id       | 19           |
+| body     | no           |
+| argument | text, number |
 
 Link to footnote.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 footlnk 1
 ```
 
 ## 20. Footnote
 
-| Property | Description    |
-| -------- | -------------- |
-| name     | footn          |
-| id       | 20             |
-| body     | text           |
-| argument | text, number   |
+| Property | Description  |
+| -------- | ------------ |
+| name     | footn        |
+| id       | 20           |
+| body     | text         |
+| argument | text, number |
 
 Creates footnote.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 footn 1: I am Footnote
 ```
 
 ## 21. Anchor
 
-| Property | Description    |
-| -------- | -------------- |
-| name     | a              |
-| id       | 21             |
-| body     | no             |
-| argument | text, number   |
+| Property | Description  |
+| -------- | ------------ |
+| name     | a            |
+| id       | 21           |
+| body     | no           |
+| argument | text, number |
 
 Creates anchor. Like `<a href="#argument"></a>` in HTML.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 a0
 ```
 
@@ -428,9 +428,9 @@ a0
 
 Creates ~~strikethrough~~ text.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 s: I am Strikethrough
 ```
 
@@ -445,9 +445,9 @@ s: I am Strikethrough
 
 Creates ^superscript^ text.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 sup: I am Superscript
 ```
 
@@ -462,9 +462,9 @@ sup: I am Superscript
 
 Creates ~subscript~ text.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 sub: I am Subscript
 ```
 
@@ -479,30 +479,30 @@ sub: I am Subscript
 
 Creates disclosure element.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 disc "Click to expand": I am Disclosure
 ```
 
 ## 26. Block
 
-| Property | Description                   |
-| -------- | ----------------------------- |
-| name     | block                         |
-| id       | 26                            |
-| body     | text, tags                    |
-| argument | optional; start, center, end  |
+| Property | Description                  |
+| -------- | ---------------------------- |
+| name     | block                        |
+| id       | 26                           |
+| body     | text, tags                   |
+| argument | optional; start, center, end |
 
 Creates block element. Can be used for horizontal aligning. By default aligned to center.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 block: I am Block
 ```
 
-Argument converts to numbers in daletl.
+Argument converts to numbers in DaletPack.
 
 start -> 0
 end -> 1
@@ -518,9 +518,9 @@ end -> 1
 
 Creates carousel.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 carousel [
   - Example 1
   - Example 2
@@ -538,42 +538,42 @@ carousel [
 
 Creates code block.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 code "js": let code = "js"
 ```
 
 ## 29. Pre-formatted text
 
-| Property | Description    |
-| -------- | -------------- |
-| name     | pre            |
-| id       | 29             |
-| body     | text           |
-| argument | no             |
+| Property | Description |
+| -------- | ----------- |
+| name     | pre         |
+| id       | 29          |
+| body     | text        |
+| argument | no          |
 
 Creates pre formatted text block. Like code but without style and highlight.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 pre: I am pre
 ```
 
 ## 30. Metadata
 
-| Property | Description    |
-| -------- | -------------- |
-| name     | meta           |
-| id       | 30             |
-| body     | text           |
-| argument | text           |
+| Property | Description |
+| -------- | ----------- |
+| name     | meta        |
+| id       | 30          |
+| body     | text        |
+| argument | text        |
 
 Not displayed. Specifies metadata such as title, description. Must be before all tags if specified.
 
-**Daleth example**:
+**DaletMark example**:
 
-```daleth
+```DaletMark
 meta "description": I am description
 ```

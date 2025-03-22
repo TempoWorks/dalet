@@ -1,21 +1,21 @@
-1. Install daleth_lsp `cargo install daleth_lsp`
+1. Install DaletMark_lsp `cargo install DaletMark_lsp`
 2. Add this to languages.toml:
 
 ```toml
 [[language]]
-name = "daleth"
-language-servers = ["daleth-lsp"]
+name = "DaletMark"
+language-servers = ["DaletMark-lsp"]
 auto-format = true
-scope = "source.daleth"
+scope = "source.DaletMark"
 file-types = ["dlth"]
 
-[language-server.daleth-lsp]
-command = "daleth_lsp"
+[language-server.DaletMark-lsp]
+command = "DaletMark_lsp"
 
 [[grammar]]
-name = "daleth"
+name = "DaletMark"
 
 [grammar.source]
-git = "https://github.com/TxtDot/tree-sitter-daleth"
+git = "https://github.com/TxtDot/tree-sitter-DaletMark"
 rev = "HEAD"
 ```
