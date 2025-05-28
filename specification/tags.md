@@ -1,579 +1,419 @@
 # Tags specification for Dalet v1.0-preview
 
-## 0. Element
+## Element
 
-| Property | Description |
-| -------- | ----------- |
-| name     | el          |
-| id       | 0           |
-| body     | text, tags  |
-| argument | no          |
+Default element without styles.
 
-Most primitive tag. Also used if no tag is specified.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text, tags    |
 
 **DaletMark example**:
 
-```DaletMark
-el: I am Element
-el [
-  h1: I am first level heading
-]
-- Element also used with `- text` syntax.
+```daletmark
+todo
 ```
 
-## 1. Heading
+## Heading
 
-| Property | Description        |
+Bold, big text with vertical margin.
+
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text          |
+| heading  | HeadingLevel  |
+
+**DaletMark example**:
+
+```daletmark
+todo
+```
+
+## Paragraph
+
+Paragraph with vertical margin.
+
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text, tags    |
+
+**DaletMark example**:
+
+```daletmark
+todo
+```
+
+## Link
+
+Link to another resource. Opens in new tab.
+
+| Property | Allowed types      |
 | -------- | ------------------ |
-| name     | h                  |
-| id       | 1                  |
-| body     | text               |
-| argument | int x; 1 <= x <= 6 |
-
-Heading is used for text formatting.
+| body     | Optional text/tags |
+| dref     | text               |
 
 **DaletMark example**:
 
-```DaletMark
-h1: Dalet
-h2: DaletMark
-h3: High level
-h2: DaletPack
-h3: Low level
+```daletmark
+todo
 ```
 
-## 2. Paragraph
+## NavLink
 
-| Property | Description |
-| -------- | ----------- |
-| name     | p           |
-| id       | 2           |
-| body     | text, tags  |
-| argument | no          |
+Link to another resource. Opens in current tab.
 
-Paragraph is used for text formatting.
+| Property | Allowed types      |
+| -------- | ------------------ |
+| body     | Optional text/tags |
+| dref     | text               |
 
 **DaletMark example**:
 
-```DaletMark
-p: This is a paragraph
-{- Paragraph also used with this custom syntax }
+```daletmark
+todo
 ```
 
-## 3. Line break
+## Button
 
-| Property | Description |
-| -------- | ----------- |
-| name     | br          |
-| id       | 3           |
-| body     | no          |
-| argument | no          |
+Link to another resource with button style. Opens in new tab.
 
-Line break is used to insert a line break into the text.
+| Property | Allowed types      |
+| -------- | ------------------ |
+| body     | Optional text/tags |
+| dref     | text               |
 
 **DaletMark example**:
 
-```DaletMark
-br
+```daletmark
+todo
 ```
 
-## 4. Unordered list
+## NavButton
 
-| Property | Description |
-| -------- | ----------- |
-| name     | ul          |
-| id       | 4           |
-| body     | tags        |
-| argument | no          |
+Link to another resource with button style. Opens in current tab.
 
-Unordered list is used to create a list.
+| Property | Allowed types      |
+| -------- | ------------------ |
+| body     | Optional text/tags |
+| dref     | text               |
 
 **DaletMark example**:
 
-```DaletMark
-ul [
-  - Item 1
-  - Item 2
-]
+```daletmark
+todo
 ```
 
-## 5. Ordered list
+## Image
 
-| Property | Description |
-| -------- | ----------- |
-| name     | ol          |
-| id       | 5           |
-| body     | tags        |
-| argument | no          |
+Image with optional alt text.
 
-Ordered list is used to create a list with increasing numbers.
+| Property | Allowed types |
+| -------- | ------------- |
+| src      | text          |
+| alt      | Optional text |
 
 **DaletMark example**:
 
-```DaletMark
-ol [
-  - Item
-  - Item
-  - Item
-]
+```daletmark
+todo
 ```
 
-## 6. Row
+## Table
 
-| Property | Description                  |
-| -------- | ---------------------------- |
-| name     | row                          |
-| id       | 6                            |
-| body     | tags                         |
-| argument | optional; start, center, end |
+Table element.
 
-Splits the text into rows. The alignment argument specifies how the items inside the row are aligned horizontally. By default it is aligned to the start.
-**DaletMark example**:
-
-```DaletMark
-row [
-  - Left
-  - Right
-]
-
-row "start" [
-  - Left
-  - Right
-]
-```
-
-## 7. Link
-
-| Property | Description |
-| -------- | ----------- |
-| name     | link        |
-| id       | 7           |
-| body     | any         |
-| argument | text        |
-
-Link to other sites. On click the link opens in new tab.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | TableRows     |
 
 **DaletMark example**:
 
-```DaletMark
-link "https://example.com": I am Link
+```daletmark
+todo
 ```
 
-## 8. Navlink
+## List
 
-| Property | Description |
-| -------- | ----------- |
-| name     | navlink     |
-| id       | 8           |
-| body     | any         |
-| argument | text        |
+List with custom marker style.
 
-Link to the same site. On click the link opens in current tab.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | tags          |
+| style    | ListStyle     |
 
 **DaletMark example**:
 
-```DaletMark
-navlink "/specification": I am Navlink
+```daletmark
+todo
 ```
 
-## 9. Button
+## Bold
 
-| Property | Description |
-| -------- | ----------- |
-| name     | btn         |
-| id       | 9           |
-| body     | any         |
-| argument | text        |
+Bold text.
 
-Same as link, but with button style.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text          |
 
 **DaletMark example**:
 
-```DaletMark
-btn "https://example.com": I am Button
+```daletmark
+todo
 ```
 
-## 10. NavButton
+## Italic
 
-| Property | Description |
-| -------- | ----------- |
-| name     | navbtn      |
-| id       | 9           |
-| body     | any         |
-| argument | text        |
+Italic text.
 
-Same as navlink, but with button style.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text          |
 
 **DaletMark example**:
 
-```DaletMark
-navbtn "https://example.com": I am NavButton
+```daletmark
+todo
 ```
 
-## 11. Image
+## Strikethrough
 
-| Property | Description |
-| -------- | ----------- |
-| name     | img         |
-| id       | 11          |
-| body     | no          |
-| argument | text        |
+Strikethrough text.
 
-Displays an image.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text          |
 
 **DaletMark example**:
 
-```DaletMark
-img "/dalet.png"
+```daletmark
+todo
 ```
 
-## 12. Table
+## Superscript
 
-| Property | Description |
-| -------- | ----------- |
-| name     | table       |
-| id       | 12          |
-| body     | tags        |
-| argument | no          |
+Superscript text.
 
-Creates a table.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text          |
 
 **DaletMark example**:
 
-```DaletMark
-{> table
-  [ Name | Age ]
-  [ Elon | 53  ]
-}
-
-table [
-    tprow [
-        - Name
-        - Age
-    ]
-    trow [
-        - Elon
-        - 53
-    ]
-]
+```daletmark
+todo
 ```
 
-## 13. Table Row
+## Subscript
 
-| Property | Description |
-| -------- | ----------- |
-| name     | trow        |
-| id       | 13          |
-| body     | tags        |
-| argument | no          |
+Subscript text.
 
-Creates a table row.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text          |
 
 **DaletMark example**:
 
-```DaletMark
-trow [
-  - Name
-  - Age
-]
+```daletmark
+todo
 ```
 
-## 14. Table Primary Row
+## Mono
 
-| Property | Description |
-| -------- | ----------- |
-| name     | tprow       |
-| id       | 14          |
-| body     | tags        |
-| argument | no          |
+Monospace text.
 
-Like table row, but with primary background.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text          |
 
 **DaletMark example**:
 
-```DaletMark
-tprow [
-  - Name
-  - Age
-]
+```daletmark
+todo
 ```
 
-## 15. Horizontal rule
+## FootLink
 
-| Property | Description |
-| -------- | ----------- |
-| name     | hr          |
-| id       | 15          |
-| body     | no          |
-| argument | no          |
+Link to a footnote.
 
-Creates a horizontal rule.
+| Property | Allowed types |
+| -------- | ------------- |
+| footnote | u64           |
 
 **DaletMark example**:
 
-```DaletMark
-hr
+```daletmark
+todo
 ```
 
-## 16. Bold
+## FootNote
 
-| Property | Description |
-| -------- | ----------- |
-| name     | b           |
-| id       | 16          |
-| body     | text        |
-| argument | no          |
+Footnote content.
 
-Creates **bold** text.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text          |
+| footnote | u64           |
 
 **DaletMark example**:
 
-```DaletMark
-b: I am Bold
+```daletmark
+todo
 ```
 
-## 17. Italic
+## Anchor
 
-| Property | Description |
-| -------- | ----------- |
-| name     | i           |
-| id       | 17          |
-| body     | text        |
-| argument | no          |
+Anchor for links.
 
-Creates _italic_ text.
+| Property | Allowed types |
+| -------- | ------------- |
+| id       | text          |
 
 **DaletMark example**:
 
-```DaletMark
-i: I am Italic
+```daletmark
+todo
 ```
 
-## 18. Blockquote
+## BlockQuote
 
-| Property | Description |
-| -------- | ----------- |
-| name     | bq          |
-| id       | 18          |
-| body     | text, tags  |
-| argument | no          |
+Blockquote element.
 
-Creates a blockquote.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text, tags    |
 
 **DaletMark example**:
 
-```DaletMark
-bq: I am Blockquote
+```daletmark
+todo
 ```
 
-## 19. Footnote Link
+## Code
 
-| Property | Description  |
-| -------- | ------------ |
-| name     | footlnk      |
-| id       | 19           |
-| body     | no           |
-| argument | text, number |
+Code block with syntax highlighting.
 
-Link to footnote.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text          |
+| language | Optional text |
 
 **DaletMark example**:
 
-```DaletMark
-footlnk 1
+```daletmark
+todo
 ```
 
-## 20. Footnote
+## InlineCode
 
-| Property | Description  |
-| -------- | ------------ |
-| name     | footn        |
-| id       | 20           |
-| body     | text         |
-| argument | text, number |
+Inline code with syntax highlighting.
 
-Creates footnote.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text          |
+| language | Optional text |
 
 **DaletMark example**:
 
-```DaletMark
-footn 1: I am Footnote
+```daletmark
+todo
 ```
 
-## 21. Anchor
+## Block
 
-| Property | Description  |
-| -------- | ------------ |
-| name     | a            |
-| id       | 21           |
-| body     | no           |
-| argument | text, number |
+Block with lighter background and padding.
 
-Creates anchor. Like `<a href="#argument"></a>` in HTML.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | tags          |
 
 **DaletMark example**:
 
-```DaletMark
-a0
+```daletmark
+todo
 ```
 
-## 22. Strikethrough
+## Flex
 
-| Property | Description |
-| -------- | ----------- |
-| name     | s           |
-| id       | 22          |
-| body     | text        |
-| argument | no          |
+Flex container.
 
-Creates ~~strikethrough~~ text.
-
-**DaletMark example**:
-
-```DaletMark
-s: I am Strikethrough
-```
-
-## 23. Superscript
-
-| Property | Description |
-| -------- | ----------- |
-| name     | sup         |
-| id       | 23          |
-| body     | text        |
-| argument | no          |
-
-Creates ^superscript^ text.
-
-**DaletMark example**:
-
-```DaletMark
-sup: I am Superscript
-```
-
-## 24. Subscript
-
-| Property | Description |
-| -------- | ----------- |
-| name     | sub         |
-| id       | 24          |
-| body     | text        |
-| argument | no          |
-
-Creates ~subscript~ text.
-
-**DaletMark example**:
-
-```DaletMark
-sub: I am Subscript
-```
-
-## 25. Disclosure
-
-| Property | Description |
-| -------- | ----------- |
-| name     | disc        |
-| id       | 25          |
-| body     | text, tags  |
-| argument | text        |
-
-Creates disclosure element.
-
-**DaletMark example**:
-
-```DaletMark
-disc "Click to expand": I am Disclosure
-```
-
-## 26. Block
-
-| Property | Description                  |
-| -------- | ---------------------------- |
-| name     | block                        |
-| id       | 26                           |
-| body     | text, tags                   |
-| argument | optional; start, center, end |
-
-Creates block element. Can be used for horizontal aligning. By default aligned to center.
-
-**DaletMark example**:
-
-```DaletMark
-block: I am Block
-```
-
-Argument converts to numbers in DaletPack.
-
-start -> 0
-end -> 1
-
-## 27. Carousel
-
-| Property | Description |
-| -------- | ----------- |
-| name     | carousel    |
-| id       | 27          |
-| body     | tags        |
-| argument | no          |
-
-Creates carousel.
-
-**DaletMark example**:
-
-```DaletMark
-carousel [
-  - Example 1
-  - Example 2
-]
-```
-
-## 28. Code
-
-| Property | Description    |
+| Property | Allowed types  |
 | -------- | -------------- |
-| name     | code           |
-| id       | 28             |
-| body     | text           |
-| argument | optional; text |
-
-Creates code block.
+| body     | tags           |
+| wrap     | bool           |
+| align_x  | Optional Align |
+| align_y  | Optional Align |
 
 **DaletMark example**:
 
-```DaletMark
-code "js": let code = "js"
+```daletmark
+todo
 ```
 
-## 29. Pre-formatted text
+## Grid
 
-| Property | Description |
-| -------- | ----------- |
-| name     | pre         |
-| id       | 29          |
-| body     | text        |
-| argument | no          |
+Grid container.
 
-Creates pre formatted text block. Like code but without style and highlight.
+| Property | Allowed types  |
+| -------- | -------------- |
+| body     | tags           |
+| align_x  | Optional Align |
+| align_y  | Optional Align |
 
 **DaletMark example**:
 
-```DaletMark
-pre: I am pre
+```daletmark
+todo
 ```
 
-## 30. Metadata
+## Disclosure
 
-| Property | Description |
-| -------- | ----------- |
-| name     | meta        |
-| id       | 30          |
-| body     | text        |
-| argument | text        |
+Collapsible block with optional title.
 
-Not displayed. Specifies metadata such as title, description. Must be before all tags if specified.
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | text, tags    |
+| title    | Optional text |
 
 **DaletMark example**:
 
-```DaletMark
-meta "description": I am description
+```daletmark
+todo
+```
+
+## Carousel
+
+Carousel of blocks with navigation buttons.
+
+| Property | Allowed types |
+| -------- | ------------- |
+| body     | tags          |
+
+**DaletMark example**:
+
+```daletmark
+todo
+```
+
+## Variable
+
+Displays variable from page context.
+
+| Property | Allowed types |
+| -------- | ------------- |
+| idx      | u64           |
+
+**DaletMark example**:
+
+```daletmark
+todo
+```
+
+## HorizontalBreak
+
+Horizontal line divider.
+
+**DaletMark example**:
+
+```daletmark
+todo
 ```

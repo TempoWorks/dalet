@@ -1,4 +1,4 @@
-1. Install DaletMark_lsp `cargo install dalet_lsp`
+1. Install dalet_lsp `cargo install dalet_lsp`
 2. Add this to languages.toml:
 
 ```toml
